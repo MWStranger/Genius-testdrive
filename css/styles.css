@@ -1,0 +1,57 @@
+:root {
+    --color-brand-light: #819b57;
+    --color-brand-dark: #365929;
+    --color-primary-light: #faf4ea;
+    --color-primary-dark: #31261a;
+}
+
+/* BASE */
+/* Загальні стилі для тіла сторінки */
+body {
+    color: var(--color-primary-dark); /* Темний колір тексту за замовчуванням */
+}
+/* Загальні стилі для списків */
+ul {
+    list-style-type: none; /* Прибираємо маркери списку */
+}
+
+/* Стилі для кнопок */
+.button {
+    background-color: var(--color-brand-light); /* Зелений фон */
+    border: 2px solid var(--color-brand-light);
+    color: var(--color-primary-light); 
+    border-radius: 8px; /* Закруглені кути */
+    padding: 10px 20px; /* Внутрішні відступи */
+}
+.button:hover {
+    cursor: pointer; /* Зміна курсора при наведенні */
+    background-color: transparent; /* Темніший зелений при наведенні */
+    color: var(--color-brand-dark);
+}
+
+/* Стилі для посилань */
+.link {
+    text-decoration: none; /* Прибираємо підкреслення */
+    color: var(--color-primary-light);
+    font-weight: bold; /* Жирний шрифт */
+}
+.link:hover {
+    color: var(--color-brand-light); /* Зелений колір при наведенні */
+}
+
+/* Стилі для заголовків та тексту */
+.hero-title {
+    color: var(--color-primary-light); /* Колір тексту заголовка */
+}
+.hero-title .accent {
+    color: var(--color-brand-light); /* Колір тексту заголовка */
+}
+.advantages-list {
+    color: var(--color-primary-light);
+    background-color: var(--color-brand-light);
+}
+.section-title .accent {
+    color: var(--color-primary-dark);
+}
+
+
