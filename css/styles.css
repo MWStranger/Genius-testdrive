@@ -1,57 +1,219 @@
+/* VARIABLES */
 :root {
-    --color-brand-light: #819b57;
-    --color-brand-dark: #365929;
-    --color-primary-light: #faf4ea;
-    --color-primary-dark: #31261a;
+  --color-brand-light: #819b57;
+  --color-brand-dark: #365929;
+  --color-primary-light: #faf4ea;
+  --color-primary-dark: #31261a;
 }
 
+
+/* FONT */
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-weight: 300;
+  src: url('../fonts/poppins-v24-latin-300.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-weight: 400;
+  src: url('../fonts/poppins-v24-latin-regular.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-weight: 600;
+  src: url('../fonts/poppins-v24-latin-600.woff2') format('woff2');
+}
+@font-face {
+  font-display: swap;
+  font-family: 'Poppins';
+  font-weight: 900;
+  src: url('../fonts/poppins-v24-latin-900.woff2') format('woff2');
+}
+
+
 /* BASE */
+/* Встановлення box-sizing для всіх елементів */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Контейнер з максимальною шириною і центруванням */
+.container {
+  width: 100%; /* Ширина контейнера 100% */
+  max-width: 1288px; /* Максимальна ширина 1240px + 48px відступи */
+  margin: 0 auto; /* Центрування контейнера */
+  padding: 0 24px; /* Стандартны відступи боків за "8-бітною сіткою" */
+}
+
 /* Загальні стилі для тіла сторінки */
 body {
-    color: var(--color-primary-dark); /* Темний колір тексту за замовчуванням */
+  color: var(--color-primary-dark); /* Темний колір тексту за замовчуванням */
+  font-family: "Poppins", sans-serif;
+  margin: 0px;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.5;
 }
+
+/* Прибираємо відступи для заголовків */
+h1, h2, h3, h4, h5, h6, p {
+  margin-top: 0px; /* Прибираємо відступи для заголовків */
+}
+
+/* Відміна курсиву для елементу address */
+address {
+  font-style: normal; /* Відміна курсиву для елементу address */
+}
+
 /* Загальні стилі для списків */
 ul {
-    list-style-type: none; /* Прибираємо маркери списку */
+  list-style-type: none; /* Прибираємо маркери списку */
 }
 
 /* Стилі для кнопок */
 .button {
-    background-color: var(--color-brand-light); /* Зелений фон */
-    border: 2px solid var(--color-brand-light);
-    color: var(--color-primary-light); 
-    border-radius: 8px; /* Закруглені кути */
-    padding: 10px 20px; /* Внутрішні відступи */
+  background-color: var(--color-brand-light); /* Зелений фон */
+  border: 2px solid var(--color-brand-light);
+  color: var(--color-primary-light);
+  border-radius: 8px; /* Закруглені кути */
+  padding: 16px 32px; /* Внутрішні відступи */
+  font-weight: 600; /* Жирний шрифт */
 }
 .button:hover {
-    cursor: pointer; /* Зміна курсора при наведенні */
-    background-color: transparent; /* Темніший зелений при наведенні */
-    color: var(--color-brand-dark);
+  cursor: pointer; /* Зміна курсора при наведенні */
+  background-color: transparent; /* Темніший зелений при наведенні */
+  color: var(--color-brand-dark);
 }
 
 /* Стилі для посилань */
 .link {
-    text-decoration: none; /* Прибираємо підкреслення */
-    color: var(--color-primary-light);
-    font-weight: bold; /* Жирний шрифт */
+  text-decoration: none; /* Прибираємо підкреслення */
+  color: var(--color-primary-light);
 }
 .link:hover {
-    color: var(--color-brand-light); /* Зелений колір при наведенні */
+  color: var(--color-brand-light); /* Зелений колір при наведенні */
+  font-weight: 600; /* Жирний шрифт */
 }
 
-/* Стилі для заголовків та тексту */
-.hero-title {
-    color: var(--color-primary-light); /* Колір тексту заголовка */
+
+/* SECTION STYLES */
+/* Стилі для усіх розділів */
+.section {
+  padding: 48px 0px; /* Внутрішні відступи для розділів */
 }
-.hero-title .accent {
-    color: var(--color-brand-light); /* Колір тексту заголовка */
+.visually-hidden {
+  position: absolute;
+  left: -10000px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
 }
-.advantages-list {
-    color: var(--color-primary-light);
-    background-color: var(--color-brand-light);
+/* Стилі для заголовків розділу */
+.section-title {
+  font-size: 64px;
+  font-weight: 900;
+  line-height: 1.3;
 }
 .section-title .accent {
-    color: var(--color-primary-dark);
+  color: var(--color-primary-dark);
+}
+.advantages-item {
+  font-size: 20px;
+  font-weight: 300;
+}
+
+/* Стилі для героїчного розділу */
+.hero-section {
+  background-color: var(--color-primary-dark); /* Темний фон для героїчного розділу */
+  padding: 272px 0px; /* Внутрішні відступи */
+}
+.hero-title {
+  color: var(--color-primary-light); /* Колір тексту заголовка */
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 128px;
+  font-weight: 900;
+  margin-bottom: 0px;
+}
+.hero-title .accent {
+  color: var(--color-brand-light); /* Колір тексту заголовка */
+}
+
+/* Стилі для розділу "Наші переваги" */
+.advantages-section {
+  margin: 0;
+  padding: 0;
+}
+.advantages-list {
+  color: var(--color-primary-light);
+  background-color: var(--color-brand-light);
+}
+
+/* Стилі для розділу "Новий формат традицій" */
+.traditions-section {
+  padding-top: 96px;
+}
+.traditions-text .brand {
+  color: var(--color-brand-light);
+  font-weight: 600;
+}
+.traditions-text .brand.uppercase {
+  text-transform: uppercase;
+}
+.traditions-title {
+  margin-bottom: 42px;
+}
+
+/* Стилі для розділу "Шеф кухарі" */
+.chefs-title {
+  margin-bottom: 80px;
+}
+.chef-title {
+  margin-bottom: 16px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+/* Стилі для розділу "Формати" */
+.formats-title {
+  margin-bottom: 80px;
+}
+.format-title {
+  font-size: 24px;
+  font-weight: 600;
+}
+.format-text {
+  font-size: 14px;
+  font-weight: 300;
+}
+
+/* Стилі для розділу "Контакти" */
+.contact-section {
+  padding-bottom: 96px;
+}
+.contact-title {
+  margin-bottom: 16px;
+}
+
+/* FOOTER */
+/* Стилі для контактів */
+.address-link {
+  color: var(--color-primary-light);
+  font-size: 16px;
+  font-weight: 300;
+  text-decoration: none;
+}
+.address-link:hover {
+  color: var(--color-brand-light);
+}
+.address-copyright {
+  color: var(--color-primary-light);
+  font-size: 14px;
+  font-weight: 400;
 }
 
 
