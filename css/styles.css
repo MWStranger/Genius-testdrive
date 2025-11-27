@@ -38,7 +38,9 @@
 
 /* BASE */
 /* Встановлення box-sizing для всіх елементів */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
@@ -63,6 +65,12 @@ body {
 /* Прибираємо відступи для заголовків */
 h1, h2, h3, h4, h5, h6, p {
   margin-top: 0px; /* Прибираємо відступи для заголовків */
+}
+
+a {
+  display: inline-block; /* Дисплей inline-block для посилань */
+  text-decoration: none; /* Прибираємо підкреслення для посилань */
+  color: inherit; /* Спадкуємо колір від батьківського елемента */
 }
 
 /* Відміна курсиву для елементу address */
@@ -235,6 +243,19 @@ ul {
   border: 2px solid var(--color-brand-light);
   content: '';
 }
+.chefs-list {
+  display: flex;
+  gap: 40px 30px;
+  flex-wrap: wrap;
+}
+.chefs-item {
+  flex-basis: calc((100% - 30px) / 2);
+}
+.chef-card {
+  display: flex;
+  gap: 30px;
+}
+
 .chef-photo{
   border-radius: 2px 2px 2px 200px;
   box-shadow: -16px 16px 0 0 var(--color-primary-light), -16px 16px 0 2px var(--color-secondary-dark);
@@ -244,8 +265,39 @@ ul {
   font-size: 40px;
   font-weight: 600;
 }
+.chef-text p {
+  margin-bottom: 24px;
+}
+.chef-text:last-child {
+  margin-bottom: 0px;
+}
 
 /* Стилі для розділу "Формати" */
+.formats-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 32px;
+}
+/* Стилі для кнопок каруселі */
+.carousel-button {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  padding: 0px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+  fill: var(--color-primary-dark); /* Колір стрілки */
+}
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+  fill: var(--color-primary-light); /* Колір стрілки при наведенні */
+}
 .formats-list {
   display: flex;
   gap: 20px;
@@ -274,11 +326,21 @@ ul {
 }
 
 /* Стилі для розділу "Контакти" */
+.contact-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 32px;
+}
 .contact-section {
   padding-bottom: 96px;
 }
 .contact-title {
   margin-bottom: 16px;
+}
+.contact-map {
+  flex-shrink: 0;
+  border: none;
+  border-radius: 16px;
 }
 
 /* FOOTER */
@@ -289,8 +351,29 @@ ul {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  padding: 32px 0px;
 }
-
+.footer-container {
+  display: flex;
+  gap: 20px;
+}
+/* Стилі для навігації в футері */
+/* Стилі для посилань в контактах */
+.footer-nav,
+.footer-address {
+  display: flex;
+  flex-basis: 50%;
+  gap: 20px;
+}
+.footer-logo,
+.footer-menu {
+  flex-grow: 1;
+}
+.address-list,
+.address-info {
+  flex-basis: 50%;
+  flex-grow: 1
+}
 .address-link {
   color: var(--color-primary-light);
   font-size: 16px;
@@ -305,5 +388,13 @@ ul {
   font-size: 14px;
   font-weight: 400;
 }
-
-
+.adress-icon {
+  fill: var(--color-primary-light);
+}
+.adress-icon:hover {
+  fill: var(--color-brand-normal);
+}
+/* Стилі для інформації в контактах */
+.address-info {
+  flex-direction: column;
+}
