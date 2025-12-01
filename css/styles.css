@@ -228,20 +228,27 @@ ul {
 
 /* Стилі для розділу "Шеф кухарі" */
 .chefs-title {
-  min-width: 520px;
-  margin-bottom: 80px;
+  margin: 0 auto 80px;
+  position: relative;
 }
-.chefs-title::before {
+.chefs-title .accent {
   display: block;
-  width: 352px;
-  border: 2px solid var(--color-brand-light);
-  content: '';
+  color: var(--color-brand-light);
 }
+.chefs-title::before,
 .chefs-title::after {
   display: block;
   width: 352px;
   border: 2px solid var(--color-brand-light);
   content: '';
+  position: absolute;
+  bottom: 24px;
+}
+.chefs-title::before {
+  left: 0px;
+}
+.chefs-title::after {
+  right: 0px;
 }
 .chefs-list {
   display: flex;
@@ -346,6 +353,7 @@ ul {
 /* FOOTER */
 /* Стилі для контактів */
 .footer {
+  position: relative;
   background-color: var(--color-primary-dark);
   background-image: url('../images/footer-background.png');
   background-repeat: no-repeat;
@@ -353,6 +361,28 @@ ul {
   background-size: cover;
   padding: 32px 0px;
 }
+.footer::before,
+.footer::after {
+  position: absolute;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  content: '';
+}
+.footer::before {
+  background-image: url('../images/decor-bread-small.png');
+  bottom: 0px;
+  left: 0px;
+  width: 180px;
+  height: 120px;
+}
+.footer::after {
+  background-image: url('../images/decor-bread-large.png');
+  bottom: 0px;
+  right: 0px;
+  width: 380px;
+  height: 190px;
+}
+
 .footer-container {
   display: flex;
   gap: 20px;
@@ -397,4 +427,35 @@ ul {
 /* Стилі для інформації в контактах */
 .address-info {
   flex-direction: column;
+}
+
+/* MODAL */
+.backdrop {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+.backdrop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+.modal {
+  position: relative;
+  background-color: var(--color-primary-light);
+  border-radius: 32px;
+  width: 880px;
+  height: 880px;
+}
+.modal-btn-close {
+  position: absolute;
+  top: 40px;
+  right: 40px;
 }
