@@ -104,6 +104,7 @@ ul {
 .link {
   text-decoration: none; /* Прибираємо підкреслення */
   color: var(--color-primary-light);
+  transition: color 0.3s ease; /* Плавний перехід кольору */
 }
 .link:hover {
   color: var(--color-brand-light); /* Зелений колір при наведенні */
@@ -111,7 +112,11 @@ ul {
 
 /* HEADER */
 .header {
-  background-color: #b7b3b3;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  padding: 32px 0px;
 }
 .header-container {
   display: flex;
@@ -165,7 +170,12 @@ ul {
 .hero-section {
   background-color: var(--color-primary-dark); /* Темний фон для героїчного розділу */
   padding: 272px 0px; /* Внутрішні відступи */
-  background-image: url('../images/hero-section-background.jpg');
+  background-image: linear-gradient(
+      102.76deg,
+      rgba(18, 18, 17, 0.78) 2.03%,
+      rgba(18, 18, 17, 0.6) 58.46%,
+      rgba(18, 18, 17, 0) 90.36%),
+    url(../images/hero-section-background.jpg);
   background-repeat: no-repeat;
   background-position: center top;
   background-size: cover;
@@ -300,6 +310,10 @@ ul {
   border: 1px solid var(--color-primary-dark);
   cursor: pointer;
   fill: var(--color-primary-dark); /* Колір стрілки */
+  transition: background-color 0.3s ease, fill 0.3s ease;
+}
+.carousel-button.next {
+  transform: rotate(180deg); /* Поворот стрілки вправо */
 }
 .carousel-button:hover {
   background-color: var(--color-primary-dark);
@@ -319,6 +333,10 @@ ul {
   border-radius: 16px;
   background-image: linear-gradient(180deg, rgba(49, 38, 26, 0) 55.21%, rgba(49, 38, 26, 0.71) 72.92%, var(--color-primary-dark) 100%);
   /* background-image: url('../images/walrus-format.jpg'); */
+  transition: transform 0.3s ease;
+}
+.format-card:hover {
+  transform: scale(1.05);
 }
 .formats-title {
   margin-bottom: 80px;
@@ -441,18 +459,22 @@ ul {
   justify-content: center;
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.5);
+  padding: 20px 0px;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 .backdrop.is-hidden {
-  opacity: 0;
-  visibility: hidden;
+  opacity: 0; /* Зробити прозорим */
+  visibility: hidden; /* Приховати з візуального потоку */
   pointer-events: none;
 }
 .modal {
   position: relative;
   background-color: var(--color-primary-light);
   border-radius: 32px;
-  width: 880px;
-  height: 880px;
+  width: 100%;
+  max-width: 880px;
+  height: 100%;
+  max-height: 880px;
 }
 .modal-btn-close {
   position: absolute;
