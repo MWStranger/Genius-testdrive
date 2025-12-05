@@ -1,0 +1,24 @@
+/* BUTTON */
+/* Стилі для кнопок каруселі */
+.carousel-button {
+  display: flex;
+  flex-shrink: 0;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+  padding: 0px;
+  border-radius: 50%;
+  border: 1px solid var(--color-primary-dark);
+  cursor: pointer;
+  fill: var(--color-primary-dark); /* Колір стрілки */
+  transition: background-color 0.3s ease, fill 0.3s ease;
+}
+.carousel-button.next {
+  transform: rotate(180deg); /* Поворот стрілки вправо */
+}
+.carousel-button:hover {
+  background-color: var(--color-primary-dark);
+  fill: var(--color-primary-light); /* Колір стрілки при наведенні */
+}

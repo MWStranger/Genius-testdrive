@@ -1,0 +1,22 @@
+/* IMPORTS */
+/* Налаштована корректна структура імпортів: змінні, шрифти, база, утіліти, секції */
+
+/* utils */
+@import './utils/variables'; /* VARIABLES - змінні */
+@import './utils/fonts'; /* FONTS - шрифти */
+@import './base'; /* BASE - базові стилі */
+@import './utils/utils'; /* UTILS - утіліти */
+@import './utils/mixin'; /* UTILS - утіліти */
+/* components */
+/** parts **/
+@import './components/buttons'; /* BUTTONS - кнопки */
+@import './components/modals'; /* MODALS - модальне вікно */
+/** sections **/
+@import './components/header'; /* HEADER - шапка сайту */
+@import './components/hero-section'; /* HERO SECTION - секція сайту */
+@import './components/advantages-section'; /* ADVANTAGES SECTION - секція сайту */
+@import './components/traditions-section'; /* TRADITIONS SECTION - секція сайту */
+@import './components/chefs-section'; /* CHEFS SECTION - секція сайту */
+@import './components/formats-section'; /* FORMATS SECTION - секція сайту */
+@import './components/contact-section'; /* CONTACT SECTION - секція сайту */
+@import './components/footer'; /* FOOTER - футер сайту */
