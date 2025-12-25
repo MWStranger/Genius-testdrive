@@ -1,0 +1,10 @@
+/* LINKS */
+/* Стилі для посилань */
+.link {
+  text-decoration: none; /* Прибираємо підкреслення */
+  color: var(--color-primary-light);
+  transition: color 0.3s ease; /* Плавний перехід кольору */
+}
+.link:hover {
+  color: var(--color-brand-light); /* Зелений колір при наведенні */
+}

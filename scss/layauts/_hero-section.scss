@@ -15,14 +15,12 @@
   background-position: center top;
   background-size: cover;
   background-attachment: fixed; /* TESTDRIVE */
-}
-.hero-title {
-  color: var(--color-primary-light); /* Колір тексту заголовка */
-  text-align: center;
-  font-size: 128px;
-  font-weight: 900;
-  margin-bottom: 0px;
-}
-.hero-title .accent {
-  color: var(--color-brand-light); /* Колір тексту заголовка */
+
+  &__title {
+    color: var(--color-primary-light); /* Колір тексту заголовка */
+    text-align: center;
+    font-size: 128px;
+    font-weight: 900;
+    margin-bottom: 0px;
+  }
 }

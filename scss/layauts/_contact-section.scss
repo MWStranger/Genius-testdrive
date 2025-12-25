@@ -1,0 +1,29 @@
+/* Стилі для розділу "Контакти" */
+.contact-section {
+  padding-bottom: 96px;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+  }
+
+  &__title {
+    margin-bottom: 16px;
+  }
+
+  &__form-field {
+    margin-bottom: 24px;
+  }
+
+  &__button {
+    margin: 0px auto 16px;
+    display: block;
+  }
+
+  &__map {
+    flex-shrink: 0;
+    border: none;
+    border-radius: 16px;
+  }
+}
