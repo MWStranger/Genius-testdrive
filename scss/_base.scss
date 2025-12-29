@@ -21,9 +21,14 @@ body {
   color: var(--color-primary-dark); /* Темний колір тексту за замовчуванням */
   font-family: 'Poppins', sans-serif;
   margin: 0px;
-  font-size: 18px;
-  font-weight: 400;
+  font-size: 16px;
+  font-weight: 300;
   line-height: 1.5;
+
+  @media screen and (min-width: $bp--tablet) {
+    font-size: 18px;
+    font-weight: 400;
+  }
 }
 
 /* Прибираємо відступи для заголовків */
@@ -55,18 +60,9 @@ ul {
   padding: 0; /* Прибираємо відступи для списків */
 }
 
-/* Стилі для кнопок */
-.button {
-  background-color: var(--color-brand-light); /* Зелений фон */
-  border: 2px solid var(--color-brand-light);
-  color: var(--color-primary-light);
-  border-radius: 8px; /* Закруглені кути */
-  padding: 16px 32px; /* Внутрішні відступи */
-  font-weight: 600; /* Жирний шрифт */
+img {
+  display: block; /* Блочний дисплей для зображень */
+  max-width: 100%; /* Максимальна ширина 100% */
+  height: auto; /* Автоматична висота для збереження пропорцій */
+  object-fit: cover; /* Обрізка зображень за потреби */
 }
-.button:hover {
-  cursor: pointer; /* Зміна курсора при наведенні */
-  background-color: transparent; /* Темніший зелений при наведенні */
-  color: var(--color-brand-dark);
-}
-

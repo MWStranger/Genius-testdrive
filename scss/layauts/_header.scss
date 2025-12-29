@@ -4,7 +4,11 @@
   top: 0px;
   left: 0px;
   width: 100%;
-  padding: 32px 0px;
+  padding-top: 16px;
+
+  @media screen and (min-width: $bp--desktop) {
+    padding-top: 32px;
+  }
 
   &__container {
     display: flex;
@@ -20,10 +24,39 @@
   }
 
   &__menu {
-    display: flex;
-    gap: 64px;
-    flex-grow: 1;
-    justify-content: center;
+    display: none;
+
+    @media screen and (min-width: $bp--desktop) {
+      display: flex;
+      gap: 64px;
+      flex-grow: 1;
+      justify-content: center;
+    }
+  }
+
+  &__button {
+    display: none;
+
+    @media screen and (min-width: $bp--desktop) {
+      display: block;
+    }
+  }
+
+  &__burger {
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    padding: 0px;
+    fill: var(--color-primary-light);
+
+    @media screen and (min-width: $bp--desktop) {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+    }
   }
 }
+
 

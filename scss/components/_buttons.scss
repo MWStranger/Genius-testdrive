@@ -1,4 +1,21 @@
 /* BUTTON */
+/* Стилі для кнопок */
+.button {
+  display: block;
+  background-color: var(--color-brand-normal); /* Зелений фон */
+  color: var(--color-primary-light);
+  border: 2px solid var(--color-brand-normal);
+  border-radius: 8px; /* Закруглені кути */
+  padding: 16px 32px; /* Внутрішні відступи */
+  font-weight: 600; /* Жирний шрифт */
+}
+.button:hover {
+  cursor: pointer;
+  background-color: var(--color-primary-light);
+  color: var(--color-brand-dark);
+  border: 2px solid var(--color-brand-light);
+}
+
 /* Стилі для кнопок каруселі */
 .carousel-button {
   display: flex;
@@ -14,11 +31,14 @@
   cursor: pointer;
   fill: var(--color-primary-dark); /* Колір стрілки */
   transition: background-color 0.3s ease, fill 0.3s ease;
+
+  &.next {
+    transform: rotate(180deg); /* Поворот стрілки вправо */
+  }
+
+  &:hover {
+    background-color: var(--color-primary-dark);
+    fill: var(--color-primary-light); /* Колір стрілки при наведенні */
+  }
 }
-.carousel-button.next {
-  transform: rotate(180deg); /* Поворот стрілки вправо */
-}
-.carousel-button:hover {
-  background-color: var(--color-primary-dark);
-  fill: var(--color-primary-light); /* Колір стрілки при наведенні */
-}
+

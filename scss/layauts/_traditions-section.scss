@@ -1,16 +1,16 @@
 /* Стилі для розділу "Новий формат традицій" */
 .traditions-section {
-  padding-top: 96px;
+  padding-top: 40px;
+
+    @media screen and (max-width: $bp--tablet) {
+      padding-top: 96px;
+    }
 
   &__container {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     gap: 40px;
-  }
-
-  &__content {
-    min-width: 710px;
   }
 
   &__title {
@@ -20,6 +20,14 @@
   &__text {
     &--limited {
       max-width: 340px;
+    }
+  }
+
+  &__image {
+    border-radius: 400px 400px 0px 0px;
+
+    @media screen and (max-width: $bp--tablet) {
+      display: none;
     }
   }
 }

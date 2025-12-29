@@ -1,15 +1,26 @@
 /* IMPORTS */
 /* Налаштована корректна структура імпортів: змінні, шрифти, база, утіліти, секції */
 
-
+/* utils */
+/* Прописувати першими - інакше SASS не знайде перемінні і т.д.*/
+@import './utils/variables'; /* VARIABLES - змінні */
+@import './utils/fonts'; /* FONTS - шрифти */
+@import './utils/texts'; /* TEXTS - стилі тексту */
+@import './utils/utils'; /* UTILS - утіліти */
+@import './utils/mixin'; /* MIXIN - міксіни */
+/* base */
+@import './base'; /* BASE - базові стилі */
 /* components */
 @import './components/buttons'; /* BUTTONS - кнопки */
 @import './components/cards'; /* CARDS - картки*/
 @import './components/form-terms'; /* FORM-TERMS - умови форми*/
 @import './components/inputs'; /* INPUTS - посилання */
 @import './components/links'; /* LNKS - посилання */
-@import './components/modals'; /* MODALS - модальне вікно */
+@import './components/pagination'; /* PAGINATION - пагінація */
 /** sections **/
+/* спочатку основні стилі для секцій */
+@import './layauts/section'; /* SECTION - секції сайту */
+/* потім стилі для конкретних секцій */
 @import './layauts/header'; /* HEADER - шапка сайту */
 @import './layauts/hero-section'; /* HERO SECTION - секція сайту */
 @import './layauts/advantages-section'; /* ADVANTAGES SECTION - секція сайту */
@@ -17,12 +28,6 @@
 @import './layauts/chefs-section'; /* CHEFS SECTION - секція сайту */
 @import './layauts/formats-section'; /* FORMATS SECTION - секція сайту */
 @import './layauts/contact-section'; /* CONTACT SECTION - секція сайту */
-@import './layauts/section'; /* SECTION - секції сайту */
+@import './layauts/mobile-menu'; /* MOBILE MENU - мобільне меню */
+@import './layauts/modal'; /* MODALS - модальне вікно */
 @import './layauts/footer'; /* FOOTER - футер сайту */
-/* utils */
-@import './utils/variables'; /* VARIABLES - змінні */
-@import './utils/fonts'; /* FONTS - шрифти */
-@import './utils/texts'; /* TEXTS - стилі тексту */
-@import './base'; /* BASE - базові стилі */
-@import './utils/utils'; /* UTILS - утіліти */
-@import './utils/mixin'; /* MIXIN - міксіни */
