@@ -1,8 +1,57 @@
+// Блокування скролу сторінки при відкритті модального вікна
+document.body.classList.add('is-locked');
+document.body.classList.remove('is-locked');
+// Функції для блокування та розблокування скролу сторінки
+const lockScroll = () => {
+  const scrollBarWidth = window.innerWidth - document.documentElement.clientWidth;
+  document.body.style.paddingRight = `${scrollBarWidth}px`;
+  document.body.classList.add('is-locked');
+};
+
+const unlockScroll = () => {
+  document.body.style.paddingRight = '';
+  document.body.classList.remove('is-locked');
+};
+
+
+// Модуль для відкриття/закриття мобільного меню та модального вікна
+const mobileMenu = document.querySelector('.mobile-menu');
 const modal = document.querySelector('.backdrop');
-const modalBtnOpen = document.querySelector('.modal-btn-open');
-const modalBtnClose = document.querySelector('.modal-btn-close');
 
-const toggleModal = () => modal.classList.toggle('is-hidden');
+function open(el) {
+  el.classList.remove('is-hidden');
+  el.classList.add('is-open');
+}
 
-modalBtnOpen.addEventListener('click', toggleModal);
-modalBtnClose.addEventListener('click', toggleModal);
+function close(el) {
+  el.classList.remove('is-open');
+  el.classList.add('is-hidden');
+}
+
+document.addEventListener('click', (e) => {
+  const actionEl = e.target.closest('.js-action');
+  if (!actionEl) return;
+
+  const action = actionEl.dataset.action;
+
+  if (action === 'menu') {
+    if (mobileMenu.classList.contains('is-open')) {
+      close(mobileMenu);
+      unlockScroll();
+    } else {
+      open(mobileMenu);
+      lockScroll();
+    }
+  }
+
+  if (action === 'modal') {
+    if (modal.classList.contains('is-open')) {
+      close(modal);
+      unlockScroll();
+    } else {
+      open(modal);
+      lockScroll();
+    }
+  }
+});
+

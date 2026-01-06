@@ -35,13 +35,13 @@
   &__title {
     color: var(--color-primary-light); /* Колір тексту заголовка */
     text-align: center;
-    font-size: 60px;
+    font-size: 56px;
     font-weight: 900;
     line-height: 1;
     margin-bottom: 48px;
 
     @media screen and (min-width: $bp--desktop) {
-      font-size: 128px;
+      font-size: 112px;
       line-height: 1.5;
       margin-bottom: 0px;
     }

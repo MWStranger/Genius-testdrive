@@ -19,6 +19,7 @@
 /* Загальні стилі для тіла сторінки */
 body {
   color: var(--color-primary-dark); /* Темний колір тексту за замовчуванням */
+  background-color: var(--color-primary-light); /* Світлий фон за замовчуванням */
   font-family: 'Poppins', sans-serif;
   margin: 0px;
   font-size: 16px;
@@ -29,6 +30,10 @@ body {
     font-size: 18px;
     font-weight: 400;
   }
+}
+
+body.is-locked {
+  overflow: hidden;
 }
 
 /* Прибираємо відступи для заголовків */
