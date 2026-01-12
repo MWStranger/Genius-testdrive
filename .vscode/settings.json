@@ -1,4 +1,13 @@
 {
+  "files.autoSave": "off",
+  "files.associations": {
+    "README.md": "plaintext"
+  },
+  "[plaintext]": {
+    "editor.formatOnSave": false,
+    "editor.formatOnType": false
+  }
+}
   "editor.insertSpaces": true,
   "editor.tabSize": 2,
   "editor.detectIndentation": false,
